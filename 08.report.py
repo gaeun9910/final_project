@@ -356,9 +356,10 @@ pio.kaleido.scope.default_format = "png"
 
 # 🔐 사용자 API 키 입력
 user_api_key = st.sidebar.text_input("🔑 OpenAI API 키 입력", type="password")
+st.sidebar.markdown(' ')
 
 # GPT 보고서 생성 버튼
-if st.sidebar.button("🧠 보고서 생성 요청 (GPT 기반)"):
+if st.sidebar.button("🧠 보고서 생성 요청"):
     if not user_api_key:
         st.error("❗ OpenAI API 키를 입력해주세요.")
     else:
