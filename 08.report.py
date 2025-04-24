@@ -30,21 +30,12 @@ st.sidebar.markdown(
         font-weight: bold;
         color: #333;
     }
-
     .sidebar-label {
         font-size: 16px !important;
         font-weight: 600;
         display: block;
-        margin-top: 16px;
         color: #000;
     }
-
-    /* 달력 팝업 확대 */
-    div[data-baseweb="datepicker-popover"] {
-        transform: scale(2.0) !important;
-        transform-origin: top left !important;
-    }
-
     /* 날짜 범위 입력 필드 글씨 크게 */
     div[data-baseweb="datepicker"] input {
         font-size: 16px !important;
@@ -56,6 +47,7 @@ st.sidebar.markdown(
     """,
     unsafe_allow_html=True
 )
+st.sidebar.markdown(' ')
 
 # 데이터 로드
 @st.cache_data
@@ -70,25 +62,26 @@ df = load_data()
 # 필터 구성
 if 'machine_id' in df.columns:
     machine_list = sorted(df['machine_id'].unique())
-    st.sidebar.markdown("<label class='sidebar-label'>🏭 설비 선택</label>", unsafe_allow_html=True)
-    selected_machine = st.sidebar.selectbox("", machine_list)
+    selected_machine = st.sidebar.selectbox("🏭 설비 선택", machine_list)
     df = df[df['machine_id'] == selected_machine]
 
+st.sidebar.markdown(' ')
+
 available_dates = sorted(df['date_only'].unique())
-st.sidebar.markdown("<label class='sidebar-label'>📅 날짜 범위 선택</label>", unsafe_allow_html=True)
 selected_dates = st.sidebar.date_input(
-    "",
+    "📅 날짜 범위 선택",
     value=(available_dates[0], available_dates[-1]),
     min_value=available_dates[0],
     max_value=available_dates[-1]
 )
+st.sidebar.markdown(' ')
 
-st.sidebar.markdown("<label class='sidebar-label'>⏰ 시간 범위 선택</label>", unsafe_allow_html=True)
 start_time, end_time = st.sidebar.slider(
-    "",
+    "⏰ 시간 범위 선택",
     value=(datetime.time(0, 0), datetime.time(23, 59)),
     format="HH:mm"
 )
+st.sidebar.markdown(' ')
 
 # 필터 적용
 start_date, end_date = selected_dates
@@ -352,15 +345,17 @@ report_data_str = json.dumps(report_data, indent=2, default=str)
 
 # ✅ GPT 보고서 생성 버튼
 st.markdown("---")
-st.header("📄 시각화 기반 자동 보고서 생성")
+st.markdown(
+    "<h2 style='font-size:25px;'>📄 시각화 기반 자동 보고서 생성</h2>",
+    unsafe_allow_html=True
+)
 
 import openai
 import plotly.io as pio
 pio.kaleido.scope.default_format = "png"
 
 # 🔐 사용자 API 키 입력
-st.sidebar.markdown("<label class='sidebar-label'>🔑 OpenAI API 키 입력</label>", unsafe_allow_html=True)
-user_api_key = st.sidebar.text_input("", type="password")
+user_api_key = st.sidebar.text_input("🔑 OpenAI API 키 입력", type="password")
 
 # GPT 보고서 생성 버튼
 if st.sidebar.button("🧠 보고서 생성 요청 (GPT 기반)"):
