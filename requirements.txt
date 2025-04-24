@@ -96,12 +96,12 @@ lifelines==0.30.0
 lightgbm==4.5.0
 llvmlite==0.44.0
 Mako==1.3.9
-markdown-it-py==3.0.0
+markdown-it-py
 MarkupSafe==3.0.2
 marshmallow==3.26.1
 matplotlib==3.10.0
 matplotlib-inline==0.1.7
-mdurl==0.1.2
+mdurl
 missingno==0.5.2
 ml_dtypes==0.5.1
 mpmath==1.3.0
@@ -141,7 +141,7 @@ pydantic==2.10.6
 pydantic-settings==2.8.1
 pydantic_core==2.27.2
 pydeck==0.9.1
-Pygments==2.18.0
+Pygments
 PyMuPDF==1.25.5
 pyparsing==3.2.0
 python-dateutil==2.9.0.post0
@@ -156,7 +156,7 @@ referencing==0.36.2
 regex==2024.11.6
 requests==2.32.3
 requests-toolbelt==1.0.0
-rich==13.9.4
+rich
 rpds-py==0.23.1
 rsa==4.9
 scikit-learn==1.6.1
