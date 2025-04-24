@@ -31,7 +31,7 @@ decorator==5.1.1
 distro==1.9.0
 et_xmlfile==2.0.0
 executing==2.1.0
-faiss-cpu==1.10.0
+faiss-cpu==1.7.4
 fastjsonschema==2.21.1
 filelock==3.17.0
 filetype==1.2.0
@@ -43,8 +43,8 @@ fsspec==2025.2.0
 gitdb==4.0.12
 GitPython==3.1.44
 greenlet==3.1.1
-grpcio==1.71.0
-grpcio-status==1.71.0
+grpcio==1.54.2
+grpcio-status==1.54.2
 h11==0.14.0
 h5py==3.12.1
 holidays==0.67
@@ -89,12 +89,12 @@ lifelines==0.30.0
 lightgbm==4.5.0
 llvmlite==0.44.0
 Mako==1.3.9
-markdown-it-py
+markdown-it-py==3.0.0
 MarkupSafe==3.0.2
 marshmallow==3.26.1
 matplotlib==3.10.0
 matplotlib-inline==0.1.7
-mdurl
+mdurl==0.1.2
 missingno==0.5.2
 ml_dtypes==0.5.1
 mpmath==1.3.0
@@ -122,7 +122,7 @@ plotly==6.0.0
 plotly-express==0.4.1
 prompt_toolkit==3.0.48
 propcache==0.3.1
-prophet==1.1.6
+# prophet 제거 또는 Docker로 대체
 proto-plus==1.26.1
 protobuf==5.29.3
 psutil==6.1.1
@@ -134,7 +134,7 @@ pydantic==2.10.6
 pydantic-settings==2.8.1
 pydantic_core==2.27.2
 pydeck==0.9.1
-Pygments
+Pygments==2.18.0
 PyMuPDF==1.25.5
 pyparsing==3.2.0
 python-dateutil==2.9.0.post0
@@ -148,7 +148,7 @@ referencing==0.36.2
 regex==2024.11.6
 requests==2.32.3
 requests-toolbelt==1.0.0
-rich
+rich==13.7.1
 rpds-py==0.23.1
 rsa==4.9
 scikit-learn==1.6.1
@@ -169,7 +169,7 @@ statsmodels==0.14.4
 streamlit==1.42.2
 sympy==1.13.1
 tenacity==9.0.0
-tensorflow_keras==0.1
+# tensorflow_keras 제거
 text-unidecode==1.3
 threadpoolctl==3.5.0
 tiktoken==0.9.0
@@ -192,3 +192,4 @@ xgboost==2.1.4
 yarl==1.18.3
 yellowbrick==1.5
 zstandard==0.23.0
+
