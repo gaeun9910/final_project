@@ -26,16 +26,16 @@ st.sidebar.markdown(
     """
     <style>
     .sidebar-title {
-        font-size: 28px;
+        font-size: 20px;
         font-weight: bold;
         color: #333;
     }
 
     .sidebar-label {
-        font-size: 23px !important;
+        font-size: 16px !important;
         font-weight: 600;
         display: block;
-        margin-top: 20px;
+        margin-top: 16px;
         color: #000;
     }
 
@@ -47,9 +47,9 @@ st.sidebar.markdown(
 
     /* 날짜 범위 입력 필드 글씨 크게 */
     div[data-baseweb="datepicker"] input {
-        font-size: 23px !important;
+        font-size: 16px !important;
         font-weight: 500 !important;
-        padding: 10px !important;
+        padding: 16px !important;
     }
     </style>
     <div class='sidebar-title'>🔧 필터 설정</div>
@@ -347,7 +347,6 @@ report_data = {
     }
 }
 
-st.json(report_data)
 
 report_data_str = json.dumps(report_data, indent=2, default=str)
 
